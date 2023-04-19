@@ -1,13 +1,11 @@
-import { Args, Int, Mutation, Query, Resolver } from "@nestjs/graphql";
-import { Sales } from "./models/Sales.model";
-import { SalesService } from "./sales.service";
-import { MakeSaleInput } from "./dto/MakeSale.input";
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { Sales } from './models/Sales.model';
+import { SalesService } from './sales.service';
+import { MakeSaleInput } from './dto/MakeSale.input';
 
 @Resolver(() => Sales)
 export class SalesResolver {
-  constructor(
-    private salesService: SalesService,
-  ) {}
+  constructor(private salesService: SalesService) {}
 
   @Query(() => [Sales])
   async sales() {
@@ -15,9 +13,7 @@ export class SalesResolver {
   }
 
   @Mutation(() => Sales)
-  async makeSale(
-    @Args('makeSaleData') makeSaleData: MakeSaleInput
-  ) {
+  async makeSale(@Args('makeSaleData') makeSaleData: MakeSaleInput) {
     return this.salesService.create(makeSaleData);
   }
 }

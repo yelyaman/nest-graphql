@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { SalesService } from './sales.service';
-import { SalesResolver } from "./sales.resolver";
+import { SalesResolver } from './sales.resolver';
 
 @Module({
   providers: [SalesService, SalesResolver],

@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Sales } from './models/Sales.model';
-import { Employee } from '../../dist/models/Employee.model';
-import { MakeSaleInput } from "./dto/MakeSale.input";
+import { MakeSaleInput } from './dto/MakeSale.input';
 
 @Injectable()
 export class SalesService {

@@ -5,7 +5,7 @@ export class Sales {
   @Field(() => Int)
   id: number;
 
-  @Field( {nullable: true} )
+  @Field({ nullable: true })
   comment?: string;
 
   @Field()

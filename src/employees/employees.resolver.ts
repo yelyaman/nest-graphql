@@ -33,4 +33,11 @@ export class EmployeesResolver {
   async getEmployeeSales(@Parent() employee: Employees) {
     return this.salesService.findAllByEmployee(employee.id);
   }
+
+  @Mutation(() => Employees)
+  async deleteEmployee(
+    @Args({ name: 'employeeId', type: () => Int }) employeeId: number,
+  ) {
+    return this.employeesService.deleteEmployee(employeeId);
+  }
 }
